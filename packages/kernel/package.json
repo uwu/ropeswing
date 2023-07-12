@@ -1,0 +1,14 @@
+{
+    "name": "ropeswing-kernel",
+    "description": "kernel code for ropeswing",
+    "scripts": {
+        "build": "node build.mjs"
+    },
+    "author": "Beef",
+    "license": "BSD-3-Clause",
+    "devDependencies": {
+        "esbuild": "^0.18.11",
+        "esbuild-plugin-alias": "^0.2.1",
+        "typescript": "^5.1.6"
+    }
+}
