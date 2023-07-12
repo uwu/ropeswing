@@ -12,7 +12,6 @@ import constants from "@lib/constants";
             if (prop !== "main") return Reflect.get(target, prop);
             return () => {
                 console.log("[ ropeswing-preboot ] we're in!");
-                console.log("original boot func stored on window :)");
                 typewrite(25, constants.greet);
             }
         }
