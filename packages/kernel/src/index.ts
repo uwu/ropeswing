@@ -1,31 +1,28 @@
-import { typewrite } from "@lib/console";
-import constants from "@lib/constants";
+import { instead } from "spitroast";
+import { writeLine } from "@lib/console";
 
-(async () => {
-    // W96 like to do this, let's follow the convention
-    console.group("[ ropeswing ]");
-    console.log("in kernel ctx...");
+// W96 like to do this, let's follow the convention
+console.group("[ ropeswing ]");
+console.log("in kernel ctx...");
 
-    console.log("declaring w96 entrypoint");
-    let fullW96Obj: Record<string, any> = new Proxy({}, {
-        get: (target, prop) => {
-            if (prop !== "main") return Reflect.get(target, prop);
-            return () => {
-                console.log("[ ropeswing-preboot ] we're in!");
-                typewrite(25, constants.greet);
-            }
-        }
-    });
+const unpatch = instead("appendChild", document.head, (args, orig) => {
+    unpatch();
+    if (!(args[0] instanceof HTMLScriptElement)) orig(...args);
+    const main: HTMLScriptElement = args[0];
 
-    Object.defineProperty(window, "w96", {
-        get: () => fullW96Obj,
-        set: (obj) => {
-            Object.keys(obj).forEach(k => {
-                fullW96Obj[k] = obj[k];
-            });
-        },
-        configurable: false,
-    });
+    writeLine("[ropeswing] preboot loaded. welcome!");
+    writeLine("applying patches...");
 
-    console.groupEnd();
-})();
+    // TODO: This is temporary, but a POC!
+    const customSettingsEntry = "{caption:\"ropeswing\",icon:await n.Q.getIconUrl(\"apps/bug\"),onclick:()=>alert(\"TODO\")}";
+    const entrypoint = "{caption:\"System Flags\",icon:await n.Q.getIconUrl(\"objects/tools\"),onclick:()=>s.xP.execCmd(\"flags\")}";
+    main.textContent = main.textContent!.replaceAll(
+        entrypoint,
+        customSettingsEntry,
+    )
+
+    writeLine("booting original!");
+    orig(...args)
+});
+
+console.groupEnd();
