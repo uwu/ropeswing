@@ -12,7 +12,9 @@
         "resolveJsonModule": true,
         "paths": {
             "@/*": ["./src/*"],
-            "@lib/*": ["./src/lib/*"]
+            "@lib/*": ["./src/lib/*"],
+            "@core/*": ["./src/core/*"],
+            "@ext/*": ["./src/ext/*"]
         }
     }
 }
