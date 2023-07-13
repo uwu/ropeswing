@@ -19,7 +19,7 @@ kutil.sysrom.exists(constants.kinjectPath) && kutil.sysrom.rm(constants.kinjectP
 
 // use the kutil to destroy the kutil!
 console.log("writing new injection")
-kutil.sysrom.write(constants.kinjectPath, `fetch("${constants.bundleEndpoint}",{cache:"no-store"}).then(r=>r.text()).then(t=>eval(t))`);
+kutil.sysrom.write(constants.kinjectPath, `let r=new XMLHttpRequest();r.open("GET","${constants.bundleEndpoint}?_="+Date.now(),false);r.send();r.status===200&&eval(r.responseText)`);
 
 console.log("done!");
 
