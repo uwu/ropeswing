@@ -18,9 +18,16 @@ const unpatch = instead("appendChild", document.head, (args, orig) => {
     const entrypoint = "{caption:\"System Flags\",icon:await n.Q.getIconUrl(\"objects/tools\"),onclick:()=>s.xP.execCmd(\"flags\")}";
     main.textContent = main.textContent!.replaceAll(
         entrypoint,
-        customSettingsEntry,
+        `${entrypoint},${customSettingsEntry}`,
     )
 
+    const entry2 = "{label:\"OS Flags\",onclick:()=>s.xP.execCmd(\"flags\")}";
+    const custom2 = "{label:\"we can also inject here!\",onclick:()=>alert(\"quite funky, eh?\")}";
+    main.textContent = main.textContent!.replaceAll(
+        entry2,
+        `${custom2},${entry2}`,
+    )
+    
     writeLine("booting original!");
     orig(...args)
 });
