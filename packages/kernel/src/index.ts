@@ -1,6 +1,7 @@
 import { instead } from "spitroast";
 import { writeLine } from "@lib/console";
 import { applyPatches } from "@core/patcher";
+import api from "@core/api";
 
 // W96 like to do this, let's follow the convention
 console.group("[ ropeswing ]");
@@ -12,6 +13,9 @@ const unpatch = instead("appendChild", document.head, (args, orig) => {
     const main: HTMLScriptElement = args[0];
 
     writeLine("[ropeswing] preboot loaded. welcome!");
+
+    writeLine("exposing API...");
+    window.ropeswing = api();
 
     writeLine("applying patches...");
     applyPatches(main);

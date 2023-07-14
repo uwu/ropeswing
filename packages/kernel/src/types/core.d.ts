@@ -1,9 +1,10 @@
 type ReplaceFn = (match: string, ...groups: string[]) => string;
+type Replacer = string | ReplaceFn;
 
 interface Patch {
     find: RegExp | string;
     // Sourced from lib.dom.ts
-    replace: string | ReplaceFn;
+    replace: Replacer;
 }
 
 interface Extension {
@@ -13,4 +14,5 @@ interface Extension {
         description: string;
         authors: string[];
     }
+    [index: string]: any;
 }
