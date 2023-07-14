@@ -1,8 +1,8 @@
 export default {
     patches: [
         {
-            find: "var __webpack_exports__=__webpack_require__(5305)",
-            replace: "$&;$self.unpack(__webpack_require__, __webpack_modules__);",
+            find: /var __webpack_exports__=__webpack_require__\(\d\d\d\d\)/,
+            replace: (match) => `${match};$self.unpack(__webpack_require__,__webpack_modules__);`,
         },
     ],
     manifest: {

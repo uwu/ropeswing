@@ -1,12 +1,12 @@
 export default {
     patches: [
         {
-            find: /{caption:"System Flags",icon:await (?<getIconUrl>.{1,2}\..{1,2}\.getIconUrl)\("objects\/tools"\),onclick:\(\)=>(?<execCmd>.{1,2}\..{1,2}\.execCmd)\("flags"\)}/,
-            replace: "$&,{category:\"ropeswing\"},{caption:\"Settings\",icon:await $<getIconUrl>(\"apps/settings\"),onclick:()=>$<execCmd>(\"ctrl\", [\"--cpl\", \"ropeswing\"])}",
+            find: /{caption:"System Flags",icon:await (.{1,2}\..{1,2}\.getIconUrl)\("objects\/tools"\),onclick:\(\)=>(.{1,2}\..{1,2}\.execCmd)\("flags"\)}/,
+            replace: (match, getIconUrl, execCmd) => `${match},{category:"ropeswing"},{caption:"Settings",icon:await ${getIconUrl}("apps/settings"),onclick:()=>${execCmd}("ctrl", ["--cpl", "ropeswing"])}`,
         },
         {
             find: "rcon:k",
-            replace: "$&,ropeswing:$self.applet(__string_require__(\"Application not found\").QP)",
+            replace: (match) => `${match},ropeswing:$self.applet(__string_require__("Application not found").QP)`,
         }
     ],
     manifest: {
