@@ -15,8 +15,7 @@ export default {
         window.__string_require__ = (exp: string | RegExp) => {
             for (let [id, mod] of Object.entries(modules)) {
                 const stringified = mod.toString();
-                if (exp instanceof RegExp && exp.test(stringified)) return wpRequire(id);
-                if (typeof exp === "string" && stringified.includes(exp)) return wpRequire(id);
+                if ((exp instanceof RegExp && exp.test(stringified)) || (typeof exp === "string" && stringified.includes(exp))) return wpRequire(id);
             }   
         }
     }
