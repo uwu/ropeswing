@@ -1,7 +1,7 @@
 export default {
     patches: [
         {
-            find: /var __webpack_exports__=__webpack_require__\(\d\d\d\d\)/,
+            find: /var __webpack_exports__=__webpack_require__\(\d{4}\)/,
             replace: (match) => `${match};$self.unpack(__webpack_require__,__webpack_modules__);`,
         },
     ],
