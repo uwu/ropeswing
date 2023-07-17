@@ -18,7 +18,6 @@ export default {
 
         for (const ext of extensions) {
             for (let patch of ext.patches) {
-                console.log(patch.executable, path);
                 if (patch.executable !== path) continue;
                 content = content.replace(patch.find, contextify(patch.replace, ext.manifest.name) as string);
             }
