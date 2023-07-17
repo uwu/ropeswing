@@ -14,26 +14,30 @@ export default {
         description: "settings frontend for ropeswing",
         authors: ["Beef"],
     },
-    applet: (AppletBase: any) => class RoyalmailApplet extends AppletBase {
-        constructor() {
-            super();
-        };
+    applet: (AppletBase: any) =>
+        class RoyalmailApplet extends AppletBase {
+            constructor() {
+                super();
+            }
 
-        async main(e: any) {
-            if (super.main(e)) return;
-            const window = this.createWindow({
-                taskbar: false,
-                center: true,
-                bodyClass: "ropeswing-applet",
-                initialWidth: 320,
-                initialHeight: 340,
-                resizable: false,
-                controlBoxStyle: "WS_CBX_CLOSE",
-                title: "ropeswing",
-                body: "<div style=\"color: red\">TODO!</div>",
-            }, true);
+            async main(e: any) {
+                if (super.main(e)) return;
+                const window = this.createWindow(
+                    {
+                        taskbar: false,
+                        center: true,
+                        bodyClass: "ropeswing-applet",
+                        initialWidth: 320,
+                        initialHeight: 340,
+                        resizable: false,
+                        controlBoxStyle: "WS_CBX_CLOSE",
+                        title: "ropeswing",
+                        body: '<div style="color: red">TODO!</div>',
+                    },
+                    true
+                );
 
-            window.show();
-        }
-    }
+                window.show();
+            }
+        },
 } as Extension;

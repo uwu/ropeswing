@@ -3,8 +3,10 @@ import { extensions } from "@ext/all";
 export function contextify(replace: Replacer, extName: string): Replacer {
     const self = `ropeswing.extensions["${extName}"]`;
     switch (typeof replace) {
-        case "string": return replace.replaceAll("$self", self);
-        case "function": return (...args) => replace(...args).replaceAll("$self", self);
+        case "string":
+            return replace.replaceAll("$self", self);
+        case "function":
+            return (...args) => replace(...args).replaceAll("$self", self);
     }
 }
 
