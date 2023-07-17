@@ -1,4 +1,4 @@
-import { extensions } from "@/ext";
+import { extensions } from "@ext/all";
 
 export function contextify(replace: Replacer, extName: string): Replacer {
     const self = `ropeswing.extensions["${extName}"]`;

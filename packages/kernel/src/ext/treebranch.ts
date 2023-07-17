@@ -1,5 +1,5 @@
 import { contextify } from "@/core/patcher";
-import { extensions } from ".";
+import { extensions } from "@ext/all";
 
 export default {
     patches: [

@@ -1,4 +1,4 @@
-import { extensions } from "@/ext";
+import { extensions } from "@ext/all";
 import * as utils from "@lib/utils";
 import * as console from "@lib/console";
 

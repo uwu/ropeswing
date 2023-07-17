@@ -18,3 +18,7 @@ interface Extension {
     };
     [index: string]: any;
 }
+
+declare module "@ext/all" {
+    export const extensions: Extension[];
+}
