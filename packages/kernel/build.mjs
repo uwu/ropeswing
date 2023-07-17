@@ -20,6 +20,9 @@ try {
         plugins: [
             alias(aliases),
         ],
+        define: {
+            ROPESWING_COMMIT: `"${hash}"`,
+        },
         footer: { js: "//# sourceURL=ropeswing" },
         legalComments: "none",
     });
