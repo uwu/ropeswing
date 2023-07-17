@@ -16,6 +16,7 @@ interface Extension {
         description: string;
         authors: string[];
     };
+    core?: boolean;
     [index: string]: any;
 }
 

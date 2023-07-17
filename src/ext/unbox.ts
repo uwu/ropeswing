@@ -19,4 +19,5 @@ export default {
             }
         };
     },
+    core: true,
 } as Extension;

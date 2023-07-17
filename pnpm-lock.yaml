@@ -8,6 +8,9 @@ dependencies:
   spitroast:
     specifier: ^1.4.3
     version: 1.4.3
+  voby:
+    specifier: ^0.54.0
+    version: 0.54.0
 
 devDependencies:
   esbuild:
@@ -537,6 +540,13 @@ packages:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
     dev: true
+  /htm@3.1.1:
+    resolution: {integrity: sha512-983Vyg8NwUE7JkZ6NmOqpCZ+sh1bKv2iYTlUkzlWmA5JD2acKoxd4KVxbMmxX/85mtfdnDmTFoNKcg5DGAvxNQ==}
+    dev: false
+
+  /oby@14.3.0:
+    resolution: {integrity: sha512-ZVDpA397HjvlOsnN6zlpAOKL4bZp/7jDfhdAE0KPLVS3RMIzqzxGW+aX1JYdmZz/x8qMNFm28z1JxDhwS4IC3Q==}
+    dev: false
 
   /spitroast@1.4.3:
     resolution: {integrity: sha512-JdkzAy2tT82ahx+eEtM5ohBeHICqFln/Yzo+vPGnE5sX1LYgPHCU2qcaSIJfR/xNrhI0q+ftwFz0H2aJysv3EA==}
@@ -567,3 +577,9 @@ packages:
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
+  /voby@0.54.0:
+    resolution: {integrity: sha512-hH8LXcP0QR4J6nnzfSWGD13onq7hqdc/ya1r1Bb+TxibtECYKZRO1m4HdSU4RcE7MdAaQwR5pwgd+hqXCqk2OA==}
+    dependencies:
+      htm: 3.1.1
+      oby: 14.3.0
+    dev: false

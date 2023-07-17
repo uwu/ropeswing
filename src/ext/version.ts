@@ -10,4 +10,5 @@ export default {
         description: "show ropeswing version info on desktop",
         authors: ["redstonekasi"],
     },
+    core: true,
 } as Extension;

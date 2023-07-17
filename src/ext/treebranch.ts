@@ -25,4 +25,5 @@ export default {
 
         return content;
     },
+    core: true,
 } as Extension;
