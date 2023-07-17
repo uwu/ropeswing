@@ -3,6 +3,7 @@ import { readFile, readdir } from "node:fs/promises";
 import { resolve } from "node:path";
 import { build } from "esbuild";
 import alias from "esbuild-plugin-alias";
+import { postcssModules, sassPlugin } from "esbuild-sass-plugin";
 
 const tsconfig = JSON.parse(await readFile("./tsconfig.json"));
 const aliases = Object.fromEntries(Object.entries(tsconfig.compilerOptions.paths).map(([alias, [target]]) => [alias, resolve(target)]));
@@ -19,6 +20,12 @@ try {
         target: "esnext",
         plugins: [
             alias(aliases),
+            sassPlugin({
+                type: "style",
+                transform: postcssModules({
+                    localsConvention: "camelCaseOnly",
+                }),
+            }),
             {
                 name: "extensions",
                 setup: (build) => {

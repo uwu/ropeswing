@@ -9,6 +9,9 @@
     "devDependencies": {
         "esbuild": "^0.18.11",
         "esbuild-plugin-alias": "^0.2.1",
+        "esbuild-sass-plugin": "^2.10.0",
+        "postcss": "^8.4.26",
+        "postcss-modules": "^6.0.0",
         "typescript": "^5.1.6"
     },
     "dependencies": {

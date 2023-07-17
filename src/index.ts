@@ -22,6 +22,36 @@ const unpatch = instead("appendChild", document.head, (args, orig) => {
 
     writeLine("booting original!");
     orig(...args);
+
+    if (localStorage["ropeswing-welcome"] !== "true") {
+        localStorage["ropeswing-welcome"] = "true";
+        w96.evt.sys.on("init-complete", () =>
+            w96.WApplication.execAsync(
+                new (class extends w96.WApplication {
+                    main(argv) {
+                        super.main(argv);
+                        const popup = this.createWindow({
+                            title: "ropeswing",
+                            initialHeight: 120,
+                            initialWidth: 260,
+                            resizable: false,
+                            bodyClass: "dlg-run-box",
+                            controlBoxStyle: "WS_CBX_CLOSE",
+                        });
+                        const body = popup.getBodyContainer();
+                        body.innerHTML = `<div class="text exp">ropeswing has been installed!<br>Check your system settings in order to configure it.</div><button class="w96-button">OK</button>`;
+                        body.querySelector("button").addEventListener("click", () => {
+                            popup.close();
+                        });
+                        popup.setPosition(window.innerWidth / 2 - 130, window.innerHeight / 2 - 60);
+                        popup.show();
+                    }
+                })(),
+                null,
+                null
+            )
+        );
+    }
 });
 
 console.log("kernel done!");
