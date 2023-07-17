@@ -16,7 +16,7 @@ export default {
             for (let [id, mod] of Object.entries(modules)) {
                 const stringified = mod.toString();
                 if ((exp instanceof RegExp && exp.test(stringified)) || (typeof exp === "string" && stringified.includes(exp))) return wpRequire(id);
-            }   
+            }
         }
     }
 } as Extension;
