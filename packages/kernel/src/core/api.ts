@@ -5,5 +5,5 @@ import * as console from "@lib/console";
 export default () => ({
     console,
     utils,
-    extensions: Object.fromEntries([...extensions].map(e => [e.manifest.name, ({ ...e })])),
+    extensions: Object.fromEntries([...extensions].map((e) => [e.manifest.name, { ...e }])),
 });

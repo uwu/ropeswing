@@ -6,7 +6,7 @@ export default {
         },
         {
             find: "the product key you have received on Patreon",
-            replace: (match) => `<s>${match}</s> any product key`, 
+            replace: (match) => `<s>${match}</s> any product key`,
         },
     ],
     manifest: {

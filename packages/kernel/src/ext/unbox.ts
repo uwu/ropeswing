@@ -17,6 +17,6 @@ export default {
                 const stringified = mod.toString();
                 if ((exp instanceof RegExp && exp.test(stringified)) || (typeof exp === "string" && stringified.includes(exp))) return wpRequire(id);
             }
-        }
-    }
+        };
+    },
 } as Extension;

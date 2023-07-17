@@ -17,9 +17,7 @@ try {
         bundle: true,
         format: "iife",
         target: "esnext",
-        plugins: [
-            alias(aliases),
-        ],
+        plugins: [alias(aliases)],
         define: {
             ROPESWING_COMMIT: `"${hash}"`,
         },

@@ -7,7 +7,7 @@ export default {
         {
             find: "rcon:k",
             replace: (match) => `${match},ropeswing:$self.applet(__string_require__("Application not found").QP)`,
-        }
+        },
     ],
     manifest: {
         name: "royalmail",
