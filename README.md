@@ -4,3 +4,7 @@ ropeswing is a [Windows 96](https://windows96.net/) is a kernel and userland mod
 
 ## Installation
 To install ropeswing, [click here](https://w96.kasi.workers.dev/install?bundle=ci).
+
+## Frequently Asked Questions
+- **Q**: Why is it called ropeswing?  
+  **A**:
