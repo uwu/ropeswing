@@ -1,4 +1,4 @@
-import { contextify } from "@/core/patcher";
+import { contextify } from "@core/patcher";
 import { extensions } from "@ext/all";
 
 export default {
