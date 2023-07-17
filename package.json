@@ -1,6 +1,6 @@
 {
-    "name": "ropeswing-kernel",
-    "description": "kernel code for ropeswing",
+    "name": "ropeswing",
+    "description": "ropeswing kernel modifications",
     "scripts": {
         "build": "node build.mjs"
     },
