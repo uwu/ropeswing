@@ -16,12 +16,27 @@ export function applyPatches(mainScript: HTMLScriptElement) {
     console.group("[ ropeswing-patcher ]");
 
     for (let extension of extensions) {
+        if (!extension.patches) continue;
+        
         for (let patch of extension.patches) {
             if (patch.executable) continue;
             // TODO: Using `as string` is bad, but TypeScript wasn't having it with my replace typings, and this works
             mainScript.textContent = mainScript.textContent.replace(patch.find, contextify(patch.replace, extension.manifest.name) as string);
             console.log(`applied patch ${extension.patches.indexOf(patch) + 1} of ${extension.patches.length} from ${extension.manifest.name}`);
         }
+    }
+
+    console.groupEnd();
+}
+
+export function executePostload() {
+    console.group("[ ropeswing-postload ]");
+
+    for (let extension of extensions) {
+        if (!extension.onLoad) continue;
+
+        extension.onLoad();
+        console.log(`executed onLoad of ${extension.manifest.name}`);
     }
 
     console.groupEnd();

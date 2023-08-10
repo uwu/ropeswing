@@ -25,14 +25,14 @@ export default {
         authors: ["Beef"],
     },
     core: true,
-    app: (WApplication: any, components: Record<string, any>) => class RoyalmailApplet extends WApplication {
+    app: (WApplication: typeof w96.WApplication, components: Record<string, any>) => class RoyalmailApplet extends WApplication {
         constructor() {
             super();
         }
     
         // TODO: Check that this whole thing disposes properly.
         // By all right, it should, however I am unsure if the weird stuff I do with the pages will mess anything up.
-        public main = (argv: string[]) => useRoot((dispose) => {
+        public main = async (argv: string[]) => useRoot((dispose) => {
             // HACK: Persist the original onterminated behaviour because we are an applet, but also dispose our reactive root
             before("onterminated", this, dispose, true);
             if ((super.main(argv), document.querySelector(".royalmail-applet"))) return;

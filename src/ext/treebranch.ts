@@ -16,10 +16,12 @@ export default {
     async getFileContent(path: string) {
         let content = await w96.FS.readstr(path);
 
-        for (const ext of extensions) {
-            for (let patch of ext.patches) {
+        for (const extension of extensions) {
+            if (!extension.patches) continue;
+
+            for (let patch of extension.patches) {
                 if (patch.executable !== path) continue;
-                content = content.replace(patch.find, contextify(patch.replace, ext.manifest.name) as string);
+                content = content.replace(patch.find, contextify(patch.replace, extension.manifest.name) as string);
             }
         }
 

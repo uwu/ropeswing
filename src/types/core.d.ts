@@ -10,7 +10,11 @@ interface Patch {
 }
 
 interface Extension {
-    patches: Patch[];
+    patches?: Patch[];
+    /** Runs *after* w96 has initialised */
+    onLoad?: () => void;
+    /** Currently unused. */
+    onUnload?: () => void;
     manifest: {
         name: string;
         description: string;
