@@ -5,8 +5,8 @@
 		"strict": true,
 		"noEmit": true,
 		"paths": {
-			"@/*": ["./src/*"],
+			"@/*": ["./src/*"]
 		}
 	},
-	"include": ["src/**/*"],
+	"include": ["src/**/*"]
 }
