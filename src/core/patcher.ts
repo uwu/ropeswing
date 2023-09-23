@@ -1,3 +1,4 @@
+import { Replacer } from "@/lib/define";
 import { extensions } from "@ext/all";
 
 export function contextify(replace: Replacer, extName: string): Replacer {

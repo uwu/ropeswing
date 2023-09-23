@@ -13,6 +13,6 @@ interface Sysrom {
 	rm: (file: string) => void;
 }
 
-interface KUtil {
+export interface KUtil {
 	sysrom: Sysrom;
 }

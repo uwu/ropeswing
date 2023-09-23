@@ -1,3 +1,4 @@
+import { Extension } from "@lib/define";
 import { html } from "voby";
 
 interface Props {

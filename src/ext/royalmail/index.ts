@@ -1,5 +1,6 @@
 import { useRoot, render, createElement } from "voby";
 import { before } from "spitroast";
+import { defineExtension } from "@lib/define";
 import Settings from "@ext/royalmail/pages/Settings";
 import Extensions from "@ext/royalmail/pages/Extensions";
 
@@ -8,7 +9,7 @@ const pages = [
 	{ name: "Extensions", component: Extensions },
 ];
 
-export default {
+export default defineExtension({
 	patches: [
 		{
 			find: /{caption:"System Flags",icon:await (.{1,2}\..{1,2}\.getIconUrl)\("objects\/tools"\),onclick:\(\)=>(.{1,2}\..{1,2}\.execCmd)\("flags"\)}/,
@@ -64,4 +65,4 @@ export default {
 					mainWnd.show();
 				});
 		},
-} as Extension;
+});

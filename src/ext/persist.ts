@@ -1,7 +1,7 @@
-import { defineExt } from "@lib/utils";
+import { defineExtension } from "@lib/define";
 
 // TODO: Add a checkbox in the reset wizard
-export default defineExt({
+export default defineExtension({
 	patches: [
 		{
 			executable: "C:/system/local/bin/resetwiz",

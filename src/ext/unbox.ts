@@ -1,6 +1,6 @@
-import { defineExt } from "@lib/utils";
+import { defineExtension } from "@lib/define";
 
-export default defineExt({
+export default defineExtension({
 	patches: [
 		{
 			find: /var __webpack_exports__=__webpack_require__\(\d{4}\)/,

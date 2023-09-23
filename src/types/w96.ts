@@ -115,7 +115,7 @@ declare class WApplication {
 	ontermination(): void;
 }
 
-interface W96API {
+export interface W96API {
 	FS: {
 		readstr(path: string): Promise<string>;
 	};

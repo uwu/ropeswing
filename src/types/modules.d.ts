@@ -15,3 +15,9 @@ declare module "*.sass" {
 	export default classes;
 	export const css: string;
 }
+
+declare module "@ext/all" {
+	import { Extension } from "@/lib/define";
+
+	export const extensions: Extension[];
+}

@@ -1,6 +1,7 @@
 import { html, For } from "voby";
 import { extensions } from "@ext/all";
 import ExtensionRow from "@ext/royalmail/components/ExtensionRow";
+import { Extension } from "@lib/define";
 
 export default (): JSX.Element => {
 	return html`

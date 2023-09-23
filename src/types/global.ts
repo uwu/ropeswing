@@ -1,14 +1,15 @@
 import api from "@core/api";
+import { W96API } from "./w96";
+import { KUtil } from "./kutil";
 
 declare global {
 	const ROPESWING_COMMIT: string;
-	const w96: W96API;
-	const kutil: KUtil;
+
+	var w96: W96API;
+	var kutil: KUtil;
 
 	interface Window {
 		ropeswing: ReturnType<typeof api>;
 		__string_require__: (exp: string | RegExp) => void;
-		w96: W96API;
-		kutil: KUtil;
 	}
 }

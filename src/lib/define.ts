@@ -1,7 +1,7 @@
 type ReplaceFn = (match: string, ...groups: string[]) => string;
-type Replacer = string | ReplaceFn;
+export type Replacer = string | ReplaceFn;
 
-interface Patch {
+export interface Patch {
 	find: RegExp | string;
 	// Sourced from lib.dom.ts
 	replace: Replacer;
@@ -9,7 +9,7 @@ interface Patch {
 	executable?: string;
 }
 
-interface Extension {
+export interface Extension {
 	patches?: Patch[];
 	/** Runs *after* w96 has initialised */
 	onLoad?: () => void;
@@ -23,6 +23,4 @@ interface Extension {
 	core?: boolean;
 }
 
-declare module "@ext/all" {
-	export const extensions: Extension[];
-}
+export const defineExtension = <T extends Extension>(e: T) => e;

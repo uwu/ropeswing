@@ -1,6 +1,6 @@
-import { defineExt } from "@lib/utils";
+import { defineExtension } from "@lib/define";
 
-export default defineExt({
+export default defineExtension({
 	patches: [
 		{
 			find: /.\.features\.includes\(.\.f\.hidden\)/,
