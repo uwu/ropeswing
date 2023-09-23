@@ -1,25 +1,25 @@
 {
-    "name": "ropeswing",
-    "description": "ropeswing kernel modifications",
-    "scripts": {
-        "build": "node build.mjs",
-        "dev": "node build.mjs --dev"
-    },
-    "author": "Beef",
-    "license": "BSD-3-Clause",
-    "devDependencies": {
-        "chokidar": "^3.5.3",
-        "colorette": "^2.0.20",
-        "esbuild": "^0.18.11",
-        "esbuild-plugin-alias": "^0.2.1",
-        "esbuild-sass-plugin": "^2.10.0",
-        "listhen": "^1.0.4",
-        "postcss": "^8.4.26",
-        "postcss-modules": "^6.0.0",
-        "typescript": "^5.1.6"
-    },
-    "dependencies": {
-        "spitroast": "^1.4.3",
-        "voby": "^0.54.0"
-    }
+	"name": "ropeswing",
+	"description": "ropeswing kernel modifications",
+	"scripts": {
+		"build": "node build.mjs",
+		"dev": "node build.mjs --dev"
+	},
+	"author": "Beef",
+	"license": "BSD-3-Clause",
+	"devDependencies": {
+		"chokidar": "^3.5.3",
+		"colorette": "^2.0.20",
+		"esbuild": "^0.18.11",
+		"esbuild-plugin-alias": "^0.2.1",
+		"esbuild-sass-plugin": "^2.10.0",
+		"listhen": "^1.0.4",
+		"postcss": "^8.4.26",
+		"postcss-modules": "^6.0.0",
+		"typescript": "^5.1.6"
+	},
+	"dependencies": {
+		"spitroast": "^1.4.3",
+		"voby": "^0.54.0"
+	}
 }

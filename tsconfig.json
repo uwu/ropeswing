@@ -1,19 +1,19 @@
 {
-    "include": ["src"],
-    "exclude": ["node_modules"],
-    "compilerOptions": {
-        "sourceMap": true,
-        "module": "ESNext",
-        "target": "ESNext",
-        "moduleResolution": "node",
-        "esModuleInterop": true,
-        "strict": true,
-        "resolveJsonModule": true,
-        "paths": {
-            "@/*": ["./src/*"],
-            "@lib/*": ["./src/lib/*"],
-            "@core/*": ["./src/core/*"],
-            "@ext/*": ["./src/ext/*"]
-        }
-    }
+	"include": ["src"],
+	"exclude": ["node_modules"],
+	"compilerOptions": {
+		"sourceMap": true,
+		"module": "ESNext",
+		"target": "ESNext",
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"strict": true,
+		"resolveJsonModule": true,
+		"paths": {
+			"@/*": ["./src/*"],
+			"@lib/*": ["./src/lib/*"],
+			"@core/*": ["./src/core/*"],
+			"@ext/*": ["./src/ext/*"]
+		}
+	}
 }

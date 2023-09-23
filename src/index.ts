@@ -8,23 +8,23 @@ console.group("[ ropeswing ]");
 console.log("in kernel ctx...");
 
 const unpatch = instead("appendChild", document.head, (args, orig) => {
-    unpatch();
-    if (!(args[0] instanceof HTMLScriptElement)) orig(...args);
-    const main: HTMLScriptElement = args[0];
+	unpatch();
+	if (!(args[0] instanceof HTMLScriptElement)) orig(...args);
+	const main: HTMLScriptElement = args[0];
 
-    writeLine("[ropeswing] preboot loaded. welcome!");
+	writeLine("[ropeswing] preboot loaded. welcome!");
 
-    writeLine("exposing API...");
-    window.ropeswing = api();
+	writeLine("exposing API...");
+	window.ropeswing = api();
 
-    writeLine("applying patches...");
-    applyPatches(main);
+	writeLine("applying patches...");
+	applyPatches(main);
 
-    writeLine("booting original!");
-    orig(...args);
+	writeLine("booting original!");
+	orig(...args);
 
-    writeLine("assigning postload init event...");
-    w96.evt.sys.on("init-complete", executePostload);
+	writeLine("assigning postload init event...");
+	w96.evt.sys.on("init-complete", executePostload);
 });
 
 console.log("kernel done!");
