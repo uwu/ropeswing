@@ -1,4 +1,4 @@
-import { timer } from "@lib/utils";
+import { timer } from "@/lib/utils";
 
 const con = document.getElementById("convga");
 if (!con) throw new Error("Failed to find VGA console element - are we on the right site?");

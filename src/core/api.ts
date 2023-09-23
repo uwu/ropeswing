@@ -1,6 +1,6 @@
 import { extensions } from "@ext/all";
-import * as utils from "@lib/utils";
-import * as console from "@lib/console";
+import * as utils from "@/lib/utils";
+import * as console from "@/lib/console";
 
 export default () => ({
 	console,

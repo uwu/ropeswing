@@ -1,6 +1,6 @@
-import api from "@core/api";
-import { W96API } from "./w96";
-import { KUtil } from "./kutil";
+import api from "@/core/api";
+import { W96API } from "@/types/w96";
+import { KUtil } from "@/types/kutil";
 
 declare global {
 	const ROPESWING_COMMIT: string;

@@ -1,7 +1,7 @@
 import { instead } from "spitroast";
-import { writeLine } from "@lib/console";
-import { applyPatches, executePostload } from "@core/patcher";
-import api from "@core/api";
+import { writeLine } from "@/lib/console";
+import { applyPatches, executePostload } from "@/core/patcher";
+import api from "@/core/api";
 
 // W96 like to do this, let's follow the convention
 console.group("[ ropeswing ]");

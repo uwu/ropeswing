@@ -1,5 +1,5 @@
-import { defineExtension } from "@lib/define";
-import { contextify } from "@core/patcher";
+import { defineExtension } from "@/lib/define";
+import { contextify } from "@/core/patcher";
 import { extensions } from "@ext/all";
 
 export default defineExtension({

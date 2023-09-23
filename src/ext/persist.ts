@@ -1,4 +1,4 @@
-import { defineExtension } from "@lib/define";
+import { defineExtension } from "@/lib/define";
 
 // TODO: Add a checkbox in the reset wizard
 export default defineExtension({

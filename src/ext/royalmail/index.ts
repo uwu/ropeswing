@@ -1,8 +1,8 @@
 import { useRoot, render, createElement } from "voby";
 import { before } from "spitroast";
-import { defineExtension } from "@lib/define";
-import Settings from "@ext/royalmail/pages/Settings";
-import Extensions from "@ext/royalmail/pages/Extensions";
+import { defineExtension } from "@/lib/define";
+import Settings from "@/ext/royalmail/pages/Settings";
+import Extensions from "@/ext/royalmail/pages/Extensions";
 
 const pages = [
 	{ name: "Settings", component: Settings, isDefault: true },

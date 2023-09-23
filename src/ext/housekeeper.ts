@@ -1,4 +1,4 @@
-import { defineExtension } from "@lib/define";
+import { defineExtension } from "@/lib/define";
 
 export default defineExtension({
 	patches: [

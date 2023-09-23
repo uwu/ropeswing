@@ -1,20 +1,12 @@
 {
 	"compilerOptions": {
-		"sourceMap": true,
-		"module": "ESNext",
-		"target": "ESNext",
-		"moduleResolution": "node",
-		"esModuleInterop": true,
+		"target": "ES2022",
+		"moduleResolution": "Bundler",
 		"strict": true,
-		"resolveJsonModule": true,
 		"noEmit": true,
 		"paths": {
 			"@/*": ["./src/*"],
-			"@lib/*": ["./src/lib/*"],
-			"@core/*": ["./src/core/*"],
-			"@ext/*": ["./src/ext/*"]
 		}
 	},
-	"include": ["src"],
-	"exclude": ["node_modules"]
+	"include": ["src/**/*"],
 }
