@@ -9,7 +9,7 @@ interface Patch {
     executable?: string;
 }
 
-interface Extension {
+type Extension = {
     patches?: Patch[];
     /** Runs *after* w96 has initialised */
     onLoad?: () => void;
@@ -21,7 +21,6 @@ interface Extension {
         authors: string[];
     };
     core?: boolean;
-    [index: string]: any;
 }
 
 declare module "@ext/all" {

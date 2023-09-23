@@ -1,4 +1,6 @@
-export default {
+import { defineExt } from "@lib/utils"
+
+export default defineExt({
     patches: [
         {
             find: /\(await\(0,.{1,2}\..{1,2}\)\(i\.value\)\)\.valid/,
@@ -14,4 +16,4 @@ export default {
         description: "makes the keymgr app (patreon rewards app) accept any key",
         authors: ["Beef"],
     },
-} as Extension;
+});

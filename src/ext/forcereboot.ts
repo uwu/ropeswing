@@ -1,4 +1,6 @@
-export default {
+import { defineExt } from "@lib/utils"
+
+export default defineExt({
     patches: [
         {
             executable: "C:/system/local/bin/shell36",
@@ -11,4 +13,4 @@ export default {
         description: "Removes the reboot confirmation when pressing Ctrl+R or F5",
         authors: ["redstonekasi"],
     },
-} as Extension;
+});

@@ -1,7 +1,8 @@
+import { defineExt } from "@lib/utils";
 import { contextify } from "@core/patcher";
 import { extensions } from "@ext/all";
 
-export default {
+export default defineExt({
     patches: [
         {
             find: /run\(await .+?\((.)\)/,
@@ -28,4 +29,4 @@ export default {
         return content;
     },
     core: true,
-} as Extension;
+});

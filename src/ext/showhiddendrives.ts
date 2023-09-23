@@ -1,4 +1,6 @@
-export default {
+import { defineExt } from "@lib/utils"
+
+export default defineExt({
     patches: [
         {
             find: /.\.features\.includes\(.\.f\.hidden\)/,
@@ -10,4 +12,4 @@ export default {
         description: "Shows all drives in explorer",
         authors: ["redstonekasi"],
     },
-} as Extension;
+});

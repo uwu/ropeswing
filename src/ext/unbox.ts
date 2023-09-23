@@ -1,4 +1,6 @@
-export default {
+import { defineExt } from "@lib/utils"
+
+export default defineExt({
     patches: [
         {
             find: /var __webpack_exports__=__webpack_require__\(\d{4}\)/,
@@ -20,4 +22,4 @@ export default {
         };
     },
     core: true,
-} as Extension;
+});

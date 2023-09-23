@@ -1,4 +1,6 @@
-export default {
+import { defineExt } from "@lib/utils";
+
+export default defineExt({
     patches: [
         {
             find: /Windows 96 main<br>/,
@@ -42,4 +44,4 @@ export default {
             popup.show();
         }
     })(),
-} as Extension;
+});
