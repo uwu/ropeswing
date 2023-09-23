@@ -9,7 +9,7 @@ export default defineExtension({
 	],
 	manifest: {
 		name: "showhiddendrives",
-		description: "Shows all drives in explorer",
+		description: "shows all drives in explorer",
 		authors: ["redstonekasi"],
 	},
 });

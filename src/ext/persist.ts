@@ -15,7 +15,7 @@ export default defineExtension({
 	],
 	manifest: {
 		name: "persist",
-		description: "persist ropeswing installation across wizard resets",
+		description: "optionally persist ropeswing installation across wizard resets",
 		authors: ["redstonekasi"],
 	},
 	persist: true,

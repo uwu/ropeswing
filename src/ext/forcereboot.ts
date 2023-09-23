@@ -10,7 +10,7 @@ export default defineExtension({
 	],
 	manifest: {
 		name: "forcereboot",
-		description: "Removes the reboot confirmation when pressing Ctrl+R or F5",
+		description: "removes the reboot confirmation when pressing Ctrl+R or F5",
 		authors: ["redstonekasi"],
 	},
 });
