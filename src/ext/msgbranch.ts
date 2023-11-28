@@ -9,8 +9,8 @@ export default defineExtension({
 	patches: [
 		{
 			executable: "C:/system/local/bin/win96-chat",
-			find: /\((this\.CHAT_URL=.{1,2})\)/,
-			replace: (_, match) => `(${match}="${custom}")`,
+			find: /https\:\/\/devel.windows96.net\:4096\//g,
+			replace: () => custom,
 		},
 		{
 			executable: "C:/system/local/bin/win96-chat",
